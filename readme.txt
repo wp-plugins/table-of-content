@@ -1,4 +1,4 @@
-=== Table of Contnet ===
+=== Table of Content ===
 Contributors: Ulrich Kautz
 Tags: toc, index, pageindex, siteindex, sitemap, table of contents
 Requires at least: 2.7
