@@ -7,8 +7,7 @@
 /*
 Plugin Name: Table of Content
 Plugin URI: http://blog.foaa.de/plugins/table-of-content
-Description: This Plugins provides the method "get_page_index_navigation" which returns an auto generated index navigation for your page based on h*-tags in your code. Of course it dependes on you creating "useful" h*-structure .. good is: h1, h2, h2, h3 .. bad is: h3, h1, h1, h2 .. use [table-of-content]..contents..[/table-of-content] in your site or call direction 
-Author: Ulrich Kautz
+Description: The Plugin generates a TOC for a page or an article or just a part of either. The TOC is a Multi-Level List with links to "anchors" on the page. Therefore it parses the given page (or the part of page you want it to parse) and looks for headlines (h1, h2, h3, ...) in it. From the found it buils the TOC. It also upgrades your page contents with a top-navigation after each found headline .. [table-of-content] text text text [/table-of-content]
 Version: 0.2
 Author URI: http://fortrabbit.de
 */
