@@ -35,8 +35,8 @@ function toc_wrapper( $args, $content = "" ) {
 	$toc_top_counter++;
 	
 	// bugfix: parse other shortcods to
-	add_filter($parsed, 'do_shortcode', 11);
-	$parsed = apply_filters( 'the_content', $parsed );
+	#add_filter($parsed, 'do_shortcode', 11);
+	#$parsed = apply_filters( 'the_content', $parsed );
 	
 	// return parsed ..
 	return $parsed;
