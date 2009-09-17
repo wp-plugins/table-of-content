@@ -2,7 +2,7 @@
 /**
  * @package Table of Content
  * @author Ulrich Kautz
- * @version 0.3
+ * @version 0.4
  */
 /*
 Plugin Name: Table of Content
