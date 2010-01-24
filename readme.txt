@@ -2,8 +2,8 @@
 Contributors: Ulrich Kautz
 Tags: toc, index, pageindex, siteindex, sitemap, table of contents
 Requires at least: 2.7
-Tested up to: 2.8.4
-Stable tag: 0.4
+Tested up to: 2.9,1
+Stable tag: 0.4.1
 
 A Table of Content (TOC) generator
 

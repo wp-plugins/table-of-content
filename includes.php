@@ -15,8 +15,11 @@ class TableOfContent {
 	public function parse_contents( $post_content = "", $args = array() ) {
 		
 		// using the whole content if empty content is specified
-		if ( $post_content == "" )
+		$empty = false;
+		if ( $post_content == "" ) {
 			$post_content = get_the_content();
+			$empty = true;
+		}
 		
 		// inti variables for this round ..
 		$this->counter = 0;
