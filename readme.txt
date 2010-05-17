@@ -2,7 +2,7 @@
 Contributors: Ulrich Kautz
 Tags: toc, index, pageindex, siteindex, sitemap, table of contents
 Requires at least: 2.7
-Tested up to: 2.9,1
+Tested up to: 2.9.2
 Stable tag: 0.4.1
 
 A Table of Content (TOC) generator
@@ -33,6 +33,10 @@ Dont use a structure like h2, h1, h3, h1 .. it doesnt have to be ordered, but at
 
 
 == Change Log ==
+
+= 0.4.2, 2010-05-17 =
+
+* Fix for unclosed tokens (http://wordpress.org/support/topic/399878?replies=1)
 
 = 0.4, 2009-09-17 =
 

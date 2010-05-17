@@ -1,4 +1,4 @@
-<?
+<?php
 
 class TableOfContent {
 	
@@ -93,7 +93,11 @@ class TableOfContent {
 			while ( $diff-- > 0 )
 				$navigation .= '</li></'. $this->args[ 'list_type' ]. '>';
 		}
-		return (object)array( 'content' => $post_content, 'navigation' => $navigation );
+		return (object)array(
+			'content'		=> $post_content,
+			'navigation'	=> $navigation,
+			'from_empty'	=> $empty
+		);
 	}
 	
 	// replace method for all h-tags ..
