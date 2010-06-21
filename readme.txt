@@ -2,8 +2,8 @@
 Contributors: Ulrich Kautz
 Tags: toc, index, pageindex, siteindex, sitemap, table of contents
 Requires at least: 2.7
-Tested up to: 2.9.2
-Stable tag: 0.4.1
+Tested up to: 3.0.0
+Stable tag: 0.5
 
 A Table of Content (TOC) generator
 
@@ -33,6 +33,10 @@ Dont use a structure like h2, h1, h3, h1 .. it doesnt have to be ordered, but at
 
 
 == Change Log ==
+
+= 0.5, 2010-06-21 =
+
+* Named anchors are now persistent (can be linked from outside)
 
 = 0.4.2, 2010-05-17 =
 

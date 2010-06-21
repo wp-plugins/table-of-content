@@ -3,9 +3,11 @@
 class TableOfContent {
 	
 	// init matches and counter for setting the anchors.. they have to be global
-	private $counter = 0;
-	private $matches = array();
-	private $args    = array();
+	private $counter     = 0;
+	private $matches     = array();
+	private $args        = array();
+	private $seen_anchor = array();
+	private $anchor_map  = array();
 	
 	/**
 	 * $site = get_page_index_navigation( get_post_content() );
@@ -38,7 +40,7 @@ class TableOfContent {
 		$this->args[ 'suffix' ] = preg_replace( '/%suffix%/', $this->args[ 'top_suffix' ], $this->args[ 'suffix' ] );
 		
 		// generate some random number for the being unique
-		$rand = $this->args[ 'rand' ] = (int)( rand() * 99999999 ); 
+		#$rand = $this->args[ 'rand' ] = (int)( rand() * 99999999 ); 
 		
 		// update content
 		$post_content = preg_replace_callback(
@@ -83,7 +85,8 @@ class TableOfContent {
 				$last_level = $level;
 				
 				// insert current level
-				$navigation .= '<li><a href="#'. $rand. 'pagenav'. $i. '">'. $title. '</a>';
+				#$navigation .= '<li><a href="#'. $rand. 'pagenav'. $i. '">'. $title. '</a>';
+				$navigation .= '<li><a href="#'. $this->anchor_map[ $i ]. '">'. $title. '</a>';
 				$i++;
 			}
 			
@@ -105,6 +108,22 @@ class TableOfContent {
 		
 		$level = $match[1];
 		$title = $match[2];
+		$anchor =
+			preg_replace( '/\-+$/', '',
+			preg_replace( '/^\-+/', '',
+			preg_replace( '/\-\-+/', '-',
+			preg_replace( '/[^\p{L}\p{N}\-_\.]/u', '-',
+				strtolower( $title )
+			) ) ) )
+		;
+		
+		$anchor_suffix = 0;
+		$anchor_prefix = $anchor;
+		while ( isset( $this->seen_anchor[ $anchor ] ) ) {
+			$anchor = $anchor_prefix. '-'. ++$anchor_suffix;
+		}
+		$this->seen_anchor[ $anchor ] = true;
+		$this->anchor_map[ $this->counter++ ] = $anchor;
 		
 		// remove leading "123." ..
 		if ( $this->args[ 'clear_iterator' ] )
@@ -117,7 +136,8 @@ class TableOfContent {
 		return join( '', array(
 			'<h'. $level. '>',
 			$this->args[ 'prefix' ],
-			'<a name="'. $this->args[ 'rand' ]. 'pagenav'. $this->counter++. '"></a>',
+			#'<a name="'. $this->args[ 'rand' ]. 'pagenav'. $this->counter++. '"></a>',
+			'<a name="'. $anchor. '"></a>',
 			$title,
 			$this->args[ 'suffix' ],
 			'</h'. $level. '>'
