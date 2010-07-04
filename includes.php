@@ -78,7 +78,7 @@ class TableOfContent {
 				elseif ( $last_level > $level ) {
 					$diff = $last_level - $level;
 					while ( $diff-- > 0 )
-						$navigation .= '</li></'. $this->args[ 'list_type' ]. '>';
+						$navigation .= '</li></'. $this->args[ 'list_type' ]. '></li>';
 				}
 				
 				// remember last level ..
