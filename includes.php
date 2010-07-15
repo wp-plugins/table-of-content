@@ -108,14 +108,15 @@ class TableOfContent {
 		
 		$level = $match[1];
 		$title = $match[2];
-		$anchor =
+		/*$anchor =
 			preg_replace( '/\-+$/', '',
 			preg_replace( '/^\-+/', '',
 			preg_replace( '/\-\-+/', '-',
 			preg_replace( '/[^\p{L}\p{N}\-_\.]/u', '-',
 				strtolower( $title )
 			) ) ) )
-		;
+		;*/
+		$anchor = sanitize_title_with_dashes( strtolower( $title ) );
 		
 		$anchor_suffix = 0;
 		$anchor_prefix = $anchor;

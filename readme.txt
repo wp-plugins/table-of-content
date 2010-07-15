@@ -34,6 +34,10 @@ Dont use a structure like h2, h1, h3, h1 .. it doesnt have to be ordered, but at
 
 == Change Log ==
 
+= 0.5.2, 2010-07-04 =
+
+* Fix for strange PHP unicode + regex problem (maybe for PHP versions compiled without unicode support, if that's possible) thanks to WJM
+
 = 0.5.1, 2010-07-04 =
 
 * Fix for missing closing li tag, when decreasing the level of indention (http://wordpress.pastebin.com/tJrb2g38)
