@@ -2,8 +2,8 @@
 Contributors: Ulrich Kautz
 Tags: toc, index, pageindex, siteindex, sitemap, table of contents
 Requires at least: 2.7
-Tested up to: 3.0.0
-Stable tag: 0.5.1
+Tested up to: 3.0.1
+Stable tag: 0.6.0
 
 A Table of Content (TOC) generator
 
@@ -23,6 +23,7 @@ or
 Then
 * Activate the plugin through the 'Plugins' menu in WordPress
 * Put in your Non-Visuale editor a `[table-of-content]` before the text and `[/table-of-content]` after the text. All Text in between will be used to generate the TOC.
+* You can set an optional title above your TOC via parameter: `[table-of-content title="This is the TOC"]`
 
 = CAUTION =
 
@@ -33,6 +34,10 @@ Dont use a structure like h2, h1, h3, h1 .. it doesnt have to be ordered, but at
 
 
 == Change Log ==
+
+= 0.6.0, 2010-10-22 =
+
+* Added "title" option to shortcode
 
 = 0.5.2, 2010-07-04 =
 
