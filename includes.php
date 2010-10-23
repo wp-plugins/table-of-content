@@ -146,4 +146,20 @@ class TableOfContent {
 	}
 }
 
+function toc_get_options() {
+	$options = array(
+		'toc_title'			=> '',
+		'toc_title_tag'		=> '',
+		'toc_list_style'	=> 'ol',
+	);
+	
+	foreach ( $options as $k => $v ) {
+		$r = get_option( $k );
+		if ( !@empty( $r ) )
+			$options[ $k ] = $r;
+	}
+	
+	return $options;
+}
+
 ?>

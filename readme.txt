@@ -3,7 +3,7 @@ Contributors: Ulrich Kautz
 Tags: toc, index, pageindex, siteindex, sitemap, table of contents
 Requires at least: 2.7
 Tested up to: 3.0.1
-Stable tag: 0.6.0
+Stable tag: 0.6.1
 
 A Table of Content (TOC) generator
 
@@ -34,6 +34,10 @@ Dont use a structure like h2, h1, h3, h1 .. it doesnt have to be ordered, but at
 
 
 == Change Log ==
+
+= 0.6.1, 2010-10-23 =
+
+* Adminmenu for setting title (above TOC) and wheter use ul or ol lists
 
 = 0.6.0, 2010-10-22 =
 
