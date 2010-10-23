@@ -42,15 +42,12 @@ function toc_wrapper( $args, $content = "" ) {
 	) );
 	
 	// set default args
-	if ( @empty( $args[ 'title' ] ) ) {
+	if ( @empty( $args[ 'title' ] ) )
 		$args[ 'title' ] = $options[ 'toc_title' ];
-		
-		if ( @empty( $args[ 'title-tag' ] ) )
-			$args[ 'title-tag' ] = $options[ 'toc_title_tag' ];
-		
-		if ( @empty( $args[ 'title-tag' ] ) )
-			$args[ 'title-tag' ] = 'h5';
-	}
+	if ( @empty( $args[ 'title-tag' ] ) )
+		$args[ 'title-tag' ] = $options[ 'toc_title_tag' ];
+	if ( @empty( $args[ 'title-tag' ] ) )
+		$args[ 'title-tag' ] = 'h5';
 	
 	// having title ?
 	$title = '';
