@@ -35,6 +35,10 @@ Dont use a structure like h2, h1, h3, h1 .. it doesnt have to be ordered, but at
 
 == Change Log ==
 
+= 0.6.3, 2010-10-25 =
+
+* Silly me forgot to add the admin.php file ..
+
 = 0.6.2, 2010-10-23 =
 
 * Removed typo..
