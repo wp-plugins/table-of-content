@@ -2,13 +2,12 @@
 /**
  * @package Scaleable Contact Form
  * @author Ulrich Kautz
- * @version 0.6.3
+ * @version 0.6.4
  */
 /*
 Author: Ulrich Kautz
-Version: 0.6.3
+Version: 0.6.4
 Author URI: http://fortrabbit.de
-Thanks to: Jonathan Rogers
 */
 
 ini_set( 'display_errors', 1 );
@@ -52,8 +51,6 @@ function toc_print_admin_form() {
 		dirname(__FILE__).
 		'/admin.php'
 	;
-	
-	$captcha_ok = scf_check_simple_captcha();
 	
 ?>
 <div class="wrap">
