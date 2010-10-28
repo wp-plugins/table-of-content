@@ -2,11 +2,11 @@
 /**
  * @package Scaleable Contact Form
  * @author Ulrich Kautz
- * @version 0.6.4
+ * @version 0.6.5
  */
 /*
 Author: Ulrich Kautz
-Version: 0.6.4
+Version: 0.6.5
 Author URI: http://fortrabbit.de
 */
 
@@ -46,7 +46,7 @@ function toc_save_admin( $data ) {
 
 function toc_print_admin_form() {
 	$options = toc_get_options();
-	$action  = get_option( 'siteurl' ).
+	$action  = site_url().
 		'/wp-admin/admin.php?page='.
 		dirname(__FILE__).
 		'/admin.php'

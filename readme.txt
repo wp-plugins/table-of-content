@@ -35,6 +35,10 @@ Dont use a structure like h2, h1, h3, h1 .. it doesnt have to be ordered, but at
 
 == Change Log ==
 
+= 0.6.5, 2010-10-28 =
+
+* Using site_url() instead of get_option( 'siteurl' ) which does not respect https settings.
+
 = 0.6.4, 2010-10-26 =
 
 * Fix wrong method name
