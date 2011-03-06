@@ -2,7 +2,7 @@
 /**
  * @package Table of Content
  * @author Ulrich Kautz
- * @version 0.6.5
+ * @version 0.6.6
  */
 /*
 Plugin Name: Table of Content
@@ -23,8 +23,24 @@ add_action( 'admin_menu', 'toc_init_admin_menu' );
 
 $TableOfContent = new TableOfContent();
 $toc_top_counter = 0;
+$toc_has_been_applied = false;
 function toc_wrapper( $args, $content = "" ) {
-	global $TableOfContent, $toc_top_counter;
+	return _toc_apply( $args, $content );
+}
+
+
+function toc_filter( $content = "" ) {
+	if ( defined( 'DISABLE_TOC' ) && DISABLE_TOC === true )
+		return $content;
+	return _toc_apply( array(), $content );
+}
+
+function _toc_apply( $args, $content ) {
+	global $TableOfContent, $toc_top_counter, $toc_has_been_applied;
+	
+	if ( $toc_has_been_applied === true )
+		return $content;
+	$toc_has_been_applied = true;
 	
 	// return nada if no content provided
 	//	Monday, May 17 2010
@@ -41,11 +57,11 @@ function toc_wrapper( $args, $content = "" ) {
 		'list_type'		=> $options[ 'toc_list_style' ]
 	) );
 	
-	// set default args
-	if ( @empty( $args[ 'title' ] ) )
-		$args[ 'title' ] = $options[ 'toc_title' ];
-	if ( @empty( $args[ 'title-tag' ] ) )
-		$args[ 'title-tag' ] = $options[ 'toc_title_tag' ];
+	// parse/set default args
+	if ( $args == null )
+		$args = array();
+	$args[ 'title' ] = $options[ 'toc_title' ];
+	$args[ 'title-tag' ] = $options[ 'toc_title_tag' ];
 	if ( @empty( $args[ 'title-tag' ] ) )
 		$args[ 'title-tag' ] = 'h5';
 	
@@ -64,14 +80,10 @@ function toc_wrapper( $args, $content = "" ) {
 	}
 	
 	// finalize the "new" content
-	$parsed = '<div class="pni-navigtion"><a name="pni-top'. $toc_top_counter. '"></a>'. $title. $res->navigation. '</div><div class="pni-content">'. $res->content. '</div>';
+	$parsed = '<div class="pni-navigation pni-navigtion"><a name="pni-top'. $toc_top_counter. '"></a>'. $title. $res->navigation. '</div><div class="pni-content">'. $res->content. '</div>';
 	
 	// increment the top suffix for next usage
 	$toc_top_counter++;
-	
-	// bugfix: parse other shortcods to
-	#add_filter($parsed, 'do_shortcode', 11);
-	#$parsed = apply_filters( 'the_content', $parsed );
 	
 	// return parsed ..
 	return $parsed;
